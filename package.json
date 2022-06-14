@@ -1,0 +1,53 @@
+{
+  "name": "semver-demo",
+  "version": "0.0.0-development",
+  "main": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "tiny",
+    "npm",
+    "package",
+    "auto-release"
+  ],
+  "scripts": {
+    "lint": "npm run lint:js && npm run lint:style",
+    "lint:js": "eslint --cache --fix --ext .js,.jsx ./src",
+    "lint:style": "stylelint --fix \"src/**/*.scss\" --syntax scss",
+    "prettier": "prettier -c \"**/src/**\" --write",
+    "lint-staged:js": "eslint --cache --fix --ext .js,.jsx",
+    "lint-staged:style": "stylelint --fix --syntax scss",
+    "lint-staged:prettier": "prettier -c --write",
+    "prepare": "husky install",
+    "test": "jest ./src/test.js"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,scss,md,json}": [
+      "npm run lint-staged:prettier",
+      "git add"
+    ],
+    "**/*.{js,jsx}": [
+      "npm run lint-staged:js",
+      "git add"
+    ],
+    "**/*.scss": [
+      "npm run lint-staged:style",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.1",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.6.2",
+    "semantic-release": "^19.0.3"
+  }
+}
