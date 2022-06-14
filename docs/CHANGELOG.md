@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/huutriCN/semver-demo/compare/v1.0.0...v1.1.0) (2022-06-14)
+
+
+### Features
+
+* pre-release ([e55e054](https://github.com/huutriCN/semver-demo/commit/e55e054c5fbadf9f200f9a6fb263cc22c50b059a))
+
 # 1.0.0 (2022-06-14)
 
 
